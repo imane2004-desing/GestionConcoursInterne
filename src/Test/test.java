@@ -2,15 +2,15 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package gestionconcours;
+package Test;
 
 /**
  *
  * @author hp
  */
-public class Test {
+public class test {
     public static void main(String[] args) {
-        ConcoursService service = new ConcoursService();
+        concoursservice service = new concoursservice();
 
         // Ajouter un concours
         ConcoursInterne concours = new ConcoursInterne(0, "Concours Informatique", "2025-06-01", "Lyon");

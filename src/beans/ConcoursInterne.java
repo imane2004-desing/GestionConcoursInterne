@@ -11,17 +11,17 @@ package beans;
 public class ConcoursInterne {
      private int id;
     private String nom;
-    private String date;
+    private date date;
     private String lieu;
 
    
-    public ConcoursInterne(int id, String nom, String date, String lieu) {
+    public ConcoursInterne(int id, String nom, date date, String lieu) {
         this.id = id;
         this.nom = nom;
         this.date = date;
         this.lieu = lieu;
     }
-public ConcoursInterne( String nom, String date, String lieu) {
+public ConcoursInterne( String nom, date date, String lieu) {
         this.nom = nom;
         this.date = date;
         this.lieu = lieu;
@@ -34,7 +34,7 @@ public ConcoursInterne( String nom, String date, String lieu) {
     public void setNom(String nom) { this.nom = nom; }
 
     public String getDate() { return date; }
-    public void setDate(String date) { this.date = date; }
+    public void setDate(date date) { this.date = date; }
 
     public String getLieu() { return lieu; }
     public void setLieu(String lieu) { this.lieu = lieu; }

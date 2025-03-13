@@ -15,9 +15,9 @@ public class ResultatConcoursService {
 
     public ResultatConcoursService() {
         // Connexion à la base de données (similaire à ConcoursInterneService)
-        String url = "jdbc:mysql://localhost:3306/votre_base";
-        String user = "votre_utilisateur";
-        String password = "votre_mot_de_passe";
+        String url = "jdbc:mysql://localhost:3306/gestion_concours";
+        String user = "root";
+        String password = "";
 
         try {
             connection = DriverManager.getConnection(url, user, password);
@@ -45,9 +45,9 @@ public class ResultatConcoursService {
             stmt.setInt(1, concoursId);
             ResultSet rs = stmt.executeQuery();
             while (rs.next()) {
-                // Assumez que vous avez déjà les méthodes pour récupérer ConcoursInterne et Participant
-                ConcoursInterne concours = // récupérer le concours par ID
-                Participant participant = // récupérer le participant par ID
+                
+                ConcoursInterne concours ;
+                Participant participant;
                 ResultatConcours resultat = new ResultatConcours(concours, participant, rs.getDouble("note"));
                 results.add(resultat);
             }
@@ -58,6 +58,6 @@ public class ResultatConcoursService {
     }
 
     public void createResultat(ResultatConcours resultat) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        throw new UnsupportedOperationException("Not supported yet."); 
     }
 }

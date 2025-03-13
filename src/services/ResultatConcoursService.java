@@ -14,7 +14,7 @@ public class ResultatConcoursService {
     private Connection connection;
 
     public ResultatConcoursService() {
-        // Connexion à la base de données (similaire à ConcoursInterneService)
+        
         String url = "jdbc:mysql://localhost:3306/gestion_concours";
         String user = "root";
         String password = "";

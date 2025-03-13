@@ -8,20 +8,38 @@ package Test;
  *
  * @author hp
  */
+import beans.Participant;
+import beans.ConcoursInterne;
+import beans.ResultatConcours;
+import java.util.List;
+import service.ConcoursInterneService;
+import service.ParticipantService;
+import service.ResultatConcoursService;
+
 public class test {
     public static void main(String[] args) {
-        concoursservice service = new concoursservice();
+        ConcoursInterneService concoursService = new ConcoursInterneService();
+        ParticipantService participantService = new ParticipantService();
+        
 
-        // Ajouter un concours
-        ConcoursInterne concours = new ConcoursInterne(0, "Concours Informatique", "2025-06-01", "Lyon");
-        service.create(concours);
+     
+        ConcoursInterne concours = new ConcoursInterne("Concours de Programmation", "2025-04-05", "Salle A");
+        concoursService.createConcours(concours);
 
-        // Lire un concours
-        ConcoursInterne result = service.read(1);
-        System.out.println(result != null ? result.getNom() : "Concours non trouvé");
+     
+        Participant participant1 = new Participant("Amal", "Ali", "ali.amal@example.com");
+        participantService.createParticipant(participant1);
 
-        // Lister tous les concours
-        service.getAll().forEach(c -> System.out.println(c.getNom()));
+        ResultatConcours resultat = new ResultatConcours(concours, participant1, 85.5);
+        resultatService.createResultat(resultat);
+
+        
+
+      
+        Participant foundParticipant = participantService.findById(participant1.getId());
+        if (foundParticipant != null) {
+            System.out.println("Participant trouvé: " + foundParticipant.getNom() + " " + foundParticipant.getPrenom());
+        }
     }
 }
 

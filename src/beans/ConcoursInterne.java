@@ -13,8 +13,6 @@ public class ConcoursInterne {
     private String nom;
     private date date;
     private String lieu;
-
-   
     public ConcoursInterne(int id, String nom, date date, String lieu) {
         this.id = id;
         this.nom = nom;
@@ -26,16 +24,12 @@ public ConcoursInterne( String nom, date date, String lieu) {
         this.date = date;
         this.lieu = lieu;
     }
-   
     public int getId() { return id; }
     public void setId(int id) { this.id = id; }
-
     public String getNom() { return nom; }
     public void setNom(String nom) { this.nom = nom; }
-
     public String getDate() { return date; }
     public void setDate(date date) { this.date = date; }
-
     public String getLieu() { return lieu; }
     public void setLieu(String lieu) { this.lieu = lieu; }
 }

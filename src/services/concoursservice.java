@@ -10,10 +10,8 @@ package services;
  */
 import java.util.List;
 import java.beans.ConcoursInterne;
-
 public class concoursservice implements iiservice<ConcoursInterne> {
     private ConcoursDAO concoursDAO = new ConcoursDAO();
-
     public boolean create(ConcoursInterne concours) {
         // Vérification de la logique métier avant l'ajout
         if (concours.getNom() == null || concours.getNom().isEmpty()) {
@@ -22,11 +20,9 @@ public class concoursservice implements iiservice<ConcoursInterne> {
         }
         return concoursDAO.create(concours);
     }
-
     public ConcoursInterne read(int id) {
         return concoursDAO.read(id);
     }
-
     public boolean update(ConcoursInterne concours) {
         if (concours.getId() <= 0) {
             System.out.println("❌ ID invalide pour la mise à jour.");
@@ -34,11 +30,9 @@ public class concoursservice implements iiservice<ConcoursInterne> {
         }
         return concoursDAO.update(concours);
     }
-
     public boolean delete(int id) {
         return concoursDAO.delete(id);
     }
-
     public List<ConcoursInterne> getAll() {
         return concoursDAO.getAll();
     }

@@ -12,7 +12,6 @@ import java.util.List;
 
 public class ParticipantService implements IService<Participant> {
     private ParticipantDAO participantDAO = new ParticipantDAO();
-
     @Override
     public boolean create(Participant participant) {
         if (participant.getNom() == null || participant.getNom().isEmpty()) {
@@ -21,22 +20,18 @@ public class ParticipantService implements IService<Participant> {
         }
         return participantDAO.create(participant);
     }
-
     @Override
     public Participant read(int id) {
         return participantDAO.read(id);
     }
-
     @Override
     public boolean update(Participant participant) {
         return participantDAO.update(participant);
     }
-
     @Override
     public boolean delete(int id) {
         return participantDAO.delete(id);
     }
-
     @Override
     public List<Participant> getAll() {
         return participantDAO.getAll();

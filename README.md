@@ -13,7 +13,7 @@ CREATE TABLE ConcoursInterne (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nom VARCHAR(255),
     date DATE,
-    salle VARCHAR(255)
+    lieu VARCHAR(255)
 );
 CREATE TABLE Participant (
     id INT AUTO_INCREMENT PRIMARY KEY,

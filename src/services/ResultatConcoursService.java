@@ -12,20 +12,16 @@ import beans.ResultatConcours;
  */
 public class ResultatConcoursService {
     private Connection connection;
-
     public ResultatConcoursService() {
-        
         String url = "jdbc:mysql://localhost:3306/gestion_concours";
         String user = "root";
         String password = "";
-
         try {
             connection = DriverManager.getConnection(url, user, password);
         } catch (SQLException e) {
             e.printStackTrace();
         }
     }
-
     public void createResultat(ResultatConcours resultat) {
         String sql = "INSERT INTO ResultatConcours (concours_id, participant_id, note) VALUES (?, ?, ?)";
         try (PreparedStatement stmt = connection.prepareStatement(sql)) {
@@ -37,7 +33,6 @@ public class ResultatConcoursService {
             e.printStackTrace();
         }
     }
-
     public List<ResultatConcours> findResultsByConcours(int concoursId) {
         List<ResultatConcours> results = new ArrayList<>();
         String sql = "SELECT * FROM ResultatConcours WHERE concours_id = ?";
@@ -45,7 +40,6 @@ public class ResultatConcoursService {
             stmt.setInt(1, concoursId);
             ResultSet rs = stmt.executeQuery();
             while (rs.next()) {
-                
                 ConcoursInterne concours ;
                 Participant participant;
                 ResultatConcours resultat = new ResultatConcours(concours, participant, rs.getDouble("note"));
@@ -56,7 +50,6 @@ public class ResultatConcoursService {
         }
         return results;
     }
-
     public void createResultat(ResultatConcours resultat) {
         throw new UnsupportedOperationException("Not supported yet."); 
     }

@@ -1,3 +1,4 @@
+https://github.com/imane2004-desing/concoursinterne.git
 Gestion des concours interne
 Ce projet est une application de gestion des concours internes. Elle permet de gérer les concours, les participants, les jurys et les associations entre participants et concours. L'application est développée en Java avec une base de données MySQL.
 Fonctionnalités

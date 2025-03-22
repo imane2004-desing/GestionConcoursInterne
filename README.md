@@ -1,32 +1,22 @@
 https://github.com/imane2004-desing/concoursinterne.git
-Gestion des concours interne
-Ce projet est une application de gestion des concours internes. Elle permet de gérer les concours, les participants, les jurys et les associations entre participants et concours. L'application est développée en Java avec une base de données MySQL.
-Fonctionnalités
-Ajouter un concours : Permet d'ajouter un nouveau concours avec son titre, sa description, la date de début et la date de fin.
-Inscrire un participant à un concours : Permet d'ajouter un participant à un concours.
-Rechercher un concours par titre : Permet de rechercher un concours en fonction de son titre.
-La base de données MySQL est composée des tables suivantes :
-Concours interne : Contient les informations sur les concours interne.
-Participant : Contient les informations sur les participants.
-ResultatConcours:pour représenter les résultats d'un participant dans un concours.
-Schéma de la Base de Données:
-CREATE TABLE ConcoursInterne (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    nom VARCHAR(255),
-    date DATE,
-    lieu VARCHAR(255)
-);
-CREATE TABLE Participant (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    nom VARCHAR(255),
-    prenom VARCHAR(255),
-    email VARCHAR(255)
-);
-CREATE TABLE ResultatConcours (
-    concours_id INT NOT NULL,
-    participant_id INT NOT NULL,
-    note DECIMAL(5,2),
-    PRIMARY KEY( concours_id,  participant_id ),
-    FOREIGN KEY (concours_id) REFERENCES ConcoursInterne(id),
-    FOREIGN KEY (participant_id) REFERENCES Participant(id)
-);
+Gestion des Concours Internes
+Description
+La Gestion des Concours Internes est une application Java Swing conçue pour simplifier l'organisation et la gestion des concours au sein d'une institution. Elle offre une plateforme centralisée pour enregistrer les informations des concours, gérer les participants et les résultats, et faciliter la communication entre les organisateurs et les participants.
+
+Contexte
+Dans le cadre de l'organisation des concours académiques ou professionnels, il est essentiel de disposer d'un outil efficace pour gérer les inscriptions, suivre les performances des participants et produire des rapports. Cet outil permettra de centraliser les informations, réduisant ainsi les erreurs et facilitant l'accès aux données nécessaires.
+
+Problématique
+Actuellement, la gestion des concours est souvent réalisée de manière manuelle ou avec des outils disparates, ce qui entraîne des difficultés dans la gestion des données, la communication entre les organisateurs et les participants, ainsi que la production de rapports précis et fiables.
+
+Objectifs
+Centraliser les informations : Regrouper toutes les données relatives aux concours, aux participants et aux résultats dans une base de données unique.
+Faciliter la gestion : Offrir une interface conviviale pour la création de concours, l'enregistrement des participations et la gestion des résultats.
+Améliorer le suivi : Permettre aux organisateurs de suivre les inscriptions et les performances des participants.
+Optimiser la recherche : Permettre une recherche efficace des participants par nom et un filtrage des résultats par concours.
+Diagrammes
+Diagramme Use Case 
+
+Diagramme de Classe :
+![image](https://github.com/user-attachments/assets/49b75c1c-95ea-4f5c-9f15-fc74b5e482fd)
+
